@@ -6,7 +6,7 @@
 2. Copy the cloned repository and paste it on **htdocs** on where the `xammp` is installed 
 3. Run the `xampp` application
 4. Start **Apache** and **MySql**
-5. On browser enter the link below or click [here](http://localhost/phpmyadmin){:target="_blank"}
+5. On browser enter the link below or click [here](http://localhost/phpmyadmin)
 ```
 localhost/phpmyadmin
 ```
