@@ -329,7 +329,7 @@
     {
         $email = escape($email);
 
-        $data = sql_select(USER_TABLE, '*', ['email' => $email])[0];
+        $data = sql_select(USERS_TABLE, '*', ['email' => $email])[0];
 
         if(! $data) 
             return ['status' => false, 'message' => 'Email does not exists'];
@@ -354,14 +354,14 @@
 
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-        if(sql_exists(USER_TABLE, 'email', $data['email'])) {
+        if(sql_exists(USERS_TABLE, 'email', $data['email'])) {
             return [
                 'status' => false,
                 'message' => 'Email exists in the database'
             ];
         }
 
-        if(! sql_insert(USER_TABLE, $data)) {
+        if(! sql_insert(USERS_TABLE, $data)) {
             return [
                 'status' => false, 
                 'message' => 'Error in register in user', 
@@ -448,4 +448,84 @@
         $products['profit'] = $selling_total - $buying_total;
 
         return $products;
+    }
+
+    /**
+     * Check for validation on a POST request
+     *
+     * Example parameters can be pass 
+     * ['name' => $_POST['name'], 'email' => $_POST['email']]
+     *
+     * @param array $data
+     * @param array $payloads
+     * @return false
+     */
+    function validate(array $data, array $payloads): bool
+    {
+        foreach ($data as $key => $rules) {
+            if (! array_key_exists($key, $payloads)) {
+                add_message_error($key.' does not exists on $_POST request');
+                return false;
+            }
+            if (in_array('required', $rules) && $payloads[$key] == '') {
+                add_message_error($key. ' is required.');
+                return false;
+            }
+            if (in_array('string', $rules) && ! is_string($payloads[$key])) {
+                add_message_error($key. ' must be a string.');
+                return false;
+            }
+            if (in_array('int', $rules) && ! filter_var($payloads[$key], FILTER_VALIDATE_INT) ) {
+                add_message_error($key. ' must be an integer');
+                return false;
+            }
+            if (in_array('float', $rules) && ! filter_var($payloads[$key], FILTER_VALIDATE_FLOAT)) {
+                add_message_error($key.' must be a float');
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Save image to the images folder
+     *
+     * @param array $files
+     * @param string $image_path
+     * @return boolean|string
+     */
+    function save_image(array $files, string $image_path = 'images/'): bool|string
+    {
+        $tempFileExtension = explode('.', $files['name']);
+        $fileExtension = strtolower(end($tempFileExtension));
+
+        if(!in_array($fileExtension, ALLOWED_IMAGE_TYPES)) {
+            add_message('image', 'Invalid file type');
+            return false;
+        }
+
+        if($files['error'] !== 0) {
+            add_message('image', 'Something went wrong please try again');
+            return false;
+        }
+
+        $fileName = md5(uniqid('', true)).'.'.$fileExtension;
+        if(!move_uploaded_file($files['tmp_name'], $image_path.$fileName)){
+            add_message('image', 'Something went wrong please try again');
+            return false;
+        }
+        
+        return $fileName;
+    }
+
+    /**
+     * Remove an image to the image folder
+     *
+     * @param string $fileName
+     * @param string $image_path
+     * @return boolean
+     */
+    function remove_image(string $fileName, string $image_path = 'images/'): bool
+    {
+        return unlink($image_path.$fileName);
     }

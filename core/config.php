@@ -7,14 +7,10 @@
     const DB_USERNAME = 'root';
     const DB_PASSWORD = '';
     const DB_PORT = 3306;
-
-    $root = basename(__DIR__);
-    // Define pages directory
-    const PAGES_LOCATION = DIRECTORY_SEPARATOR."pages".DIRECTORY_SEPARATOR; // Same as "src/pages/"
-
-    const SERVICES_LOCATION = DIRECTORY_SEPARATOR."services".DIRECTORY_SEPARATOR; // Same as "src/services/"
-
-    // Define users table in sql
-    const USER_TABLE = 'users';
+    
+    // Define tables as constant for consistency sql
+    const USERS_TABLE = 'users';
+    const PRODUCTS_TABLE = 'products';
+    const SALES_TABLE = 'sales';
 
     const ALLOWED_IMAGE_TYPES = ['jpg', 'png', 'jpeg'];

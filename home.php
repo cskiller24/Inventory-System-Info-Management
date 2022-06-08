@@ -14,5 +14,6 @@
 </head>
 <body>
     <?php include 'layouts/sidebar.php' ?>
+    <?php include 'layouts/messages.php' ?>
 </body>
 </html> 

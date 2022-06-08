@@ -1,0 +1,4 @@
+# Ignores all all files inside images folder
+# With exception of .gitignore
+*
+!.gitignore
