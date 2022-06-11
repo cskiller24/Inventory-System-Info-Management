@@ -13,7 +13,7 @@
     function redirect(string $url, int $status_code = 301): void
     {
         if(substr($url, -4) === '.php') {
-            header("Location {$url}", false, $status_code);
+            header("Location: {$url}", false, $status_code);
         } else {
             header("Location: {$url}.php", false, $status_code);
         }
@@ -321,18 +321,18 @@
     /**
      * Login a user
      *
-     * @param string $email
+     * @param string $username
      * @param string $password
      * @return array
      */
-    function login(string $email, string $password): array
+    function login(string $username, string $password): array
     {
-        $email = escape($email);
+        $email = escape($username);
 
-        $data = sql_select(USERS_TABLE, '*', ['email' => $email])[0];
+        $data = sql_select(USERS_TABLE, '*', ['username' => $username])[0];
 
         if(! $data) 
-            return ['status' => false, 'message' => 'Email does not exists'];
+            return ['status' => false, 'message' => 'Username does not exists'];
 
         if(! password_verify($password, $data['password'])) 
             return ['status' => false, 'message' => 'Password does not match'];
@@ -354,10 +354,10 @@
 
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-        if(sql_exists(USERS_TABLE, 'email', $data['email'])) {
+        if(sql_exists(USERS_TABLE, 'email', $data['username'])) {
             return [
                 'status' => false,
-                'message' => 'Email exists in the database'
+                'message' => 'Username exists in the database'
             ];
         }
 

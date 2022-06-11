@@ -4,7 +4,7 @@
     
     $product = false;
     if(isset($_GET['id'])) {
-        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['id'])[0];
+        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['id'])[0] ?? false;
     }
 
     if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -75,32 +75,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit | Product</title>
+    <title>Products Update | Lemon Squeeze Inventory System</title>
 </head>
 
 <body>
     <?php include 'layouts/sidebar.php'?>
     <?php include 'layouts/messages.php'?>
-    <?php if($product): ?>
-    <div class="card p-3">
-        <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="current_image" value="<?= $product['image'] ?>">
-            <input type="hidden" name="id" value="<?= $product['id'] ?>">
-            <input type="text" name="name" placeholder="Flavor" value="<?= $product['name'] ?>" required>
-            <input type="tel" name="quantity" placeholder="Quantity" value="<?= $product['quantity'] ?>" required>
-            <input type="tel" name="buying_price" placeholder="Buying Price" value="<?= $product['buying_price'] ?>"
-                required>
-            <input type="tel" name="selling_price" placeholder="Selling Price" value="<?= $product['selling_price'] ?>"
-                required>
-            <?php if($product['image']): ?>
-            <img src="images/<?= $product['image'] ?>" id="previewFrame">
+    <div class="contents">
+        <div class="main-contents">
+            <?php if($product): ?>
+            <div class="card p-3">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="current_image" value="<?= $product['image'] ?>">
+                    <input type="hidden" name="id" value="<?= $product['id'] ?>">
+                    <input type="text" name="name" placeholder="Flavor" value="<?= $product['name'] ?>" required>
+                    <input type="tel" name="quantity" placeholder="Quantity" value="<?= $product['quantity'] ?>"
+                        required>
+                    <input type="tel" name="buying_price" placeholder="Buying Price"
+                        value="<?= $product['buying_price'] ?>" required>
+                    <input type="tel" name="selling_price" placeholder="Selling Price"
+                        value="<?= $product['selling_price'] ?>" required>
+                    <?php if($product['image']): ?>
+                    <img src="images/<?= $product['image'] ?>" id="previewFrame">
+                    <?php endif ?>
+                    <input type="file" name="image" placeholder="Image" id="tmp" onchange="previewImage(event)">
+                    <input type="submit" value="Submit" class="btn btn-primary" name="submit">
+                </form>
+            </div>
+            <?php else: ?>
+            <h1>404 Not Found - Product with id of <?= $_GET['id'] ?> does not exists</h1>
             <?php endif ?>
-            <input type="file" name="image" placeholder="Image" id="tmp" onchange="previewImage(event)">
-            <input type="submit" value="Submit" class="btn btn-primary" name="submit">
-        </form>
-        <?php else: ?>
-        <h1>404 Not Found - Product with id of <?= $_GET['id'] ?> does not exists</h1>
-        <?php endif ?>
+        </div>
     </div>
     <script type="text/javascript">
     function previewImage(event) {

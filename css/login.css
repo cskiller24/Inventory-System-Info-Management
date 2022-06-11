@@ -1,0 +1,136 @@
+/* CSS File for Login Page */
+
+body
+	{
+		margin: 0;
+		padding: 0;
+		background-color: #ffde58;
+		overflow-x:hidden;
+	}
+
+.banner-container
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #ffbd58;
+		height: 200px;
+	}
+
+.banner-container .banner
+	{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+.banner-container .banner .logo1
+	{
+		flex: 1 1 250px;
+		left: 78%;
+		position: absolute;
+		padding-top: 10px;
+	}
+
+.banner-container .banner .text
+	{
+		flex: 1 1 250px;
+		font-family: Garamond;
+		font-weight: bold;
+		font-size: 80px;
+		color: white;
+		text-align: center;
+		text-transform: uppercase;
+		white-space: nowrap;
+		text-shadow: 3px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+	}
+
+.banner-container .banner .logo2
+	{
+		flex: 1 1 250px;
+		right: 78%;
+		position: absolute;
+		padding-top: 10px;
+	}
+
+.box 
+	{
+		background-color: white;
+		height:470px;
+		width: 600px;
+		margin-top: -3%;
+		margin-left: 23%;
+		margin-right: 25%;
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+
+h3
+	{
+
+		font-family: Times New Roman;
+		font-size: 70px;
+		text-align: center;
+		margin-bottom: 9px;
+	}
+
+.user
+	{
+		font-family: Times New Roman;
+		font-size: 40px;
+		text-align: left;
+	}
+
+.user-pass
+	{
+		font-family: Times New Roman;
+		font-size: 40px;
+		text-align: left;
+	}
+
+::placeholder
+	{
+		font-family: Times New Roman;
+		font-size: 40px;
+		position: absolute;
+		padding-left: 20px;
+	}
+
+input
+	{
+		background-color: #facb07;
+		border: none;
+		width: 400px;
+		height: 50px;
+		outline: none;
+		font-size: 35px;
+	}
+
+button
+	{	
+		font-family: Times New Roman;
+		font-size: 45px;
+		background-color: #feb54a;
+		font-weight: bold;
+		border: none;
+		float: right;
+		border-radius: 40px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 20px;
+		padding-right: 20px;
+		margin-top: 50px;
+	}
+
+.register-link
+	{
+		padding-top: 100px;
+		font-size: 25px;
+		font-weight: bold;
+	}
+
+a
+	{
+		color: red;
+	}

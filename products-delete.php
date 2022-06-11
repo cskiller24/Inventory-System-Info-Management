@@ -21,23 +21,30 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Delete | Product</title>
-    </head>
-    <body>
-        <?php include 'layouts/sidebar.php' ?>
-        <?php include 'layouts/messages.php' ?>
-        <?php if($product): ?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Delete | Lemon Squeeze Inventory System</title>
+</head>
+
+<body>
+    <?php include 'layouts/sidebar.php' ?>
+    <div class="contents">
+        <div class="main-contents">
+            <?php if($product): ?>
             <form method="post">
                 <input type="hidden" name="id" value="<?= $product['id'] ?>">
                 <input type="hidden" name="image" value="<?= $product['image'] ?>">
                 <input type="submit" value="Confirm delete? <?= $product['name'] ?>" name="submit">
             </form>
-        <?php else: ?>
+            <?php else: ?>
             <h1>404 Not Found - Product with id of <?= $_GET['id'] ?> does not exists</h1>
-        <?php endif ?>
-    </body>
+            <?php endif ?>
+        </div>
+    </div>
+
+</body>
+
 </html>

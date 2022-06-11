@@ -1,9 +1,175 @@
-<h1>
-    Sidebar
-</h1>
-<a href="home.php">Home</a>
-<a href="products-manage.php">Product Manage</a>
-<a href="products-create.php">Add Product</a>
-<a href="sales-manage.php">Sale Manage</a>
-<a href="sales-create.php">Add Sale</a>
-<a href="sales-report.php">Sales Report</a>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    left: 0;
+    background: #1b1b1b;
+    margin-top: 80px;
+}
+
+.sidebar .text {
+    color: white;
+    font-size: 60px;
+    text-align: left;
+    background: #8a52fe;
+    height: 80px;
+    padding-top: 10px;
+    padding-left: 18px;
+    margin-bottom: 12px;
+
+}
+
+nav ul {
+    background: #1b1b1b;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+}
+
+nav ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 50px;
+    padding-left: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    display: block;
+    width: 100%;
+    border-left: 3px solid transparent;
+}
+
+nav ul li.active a {
+    color: #8a52fe;
+    background: black;
+    border-left-color: #8a52fe;
+}
+
+nav ul li a:hover {
+    background: #1e1e1e;
+}
+
+nav ul ul {
+    position: static;
+    display: none;
+}
+
+nav ul .first-show.show {
+    display: block;
+}
+
+nav ul .sec-show.show1 {
+    display: block;
+}
+
+nav ul .third-show.show2 {
+    display: block;
+}
+
+nav ul ul li {
+    border-top: none;
+}
+
+nav ul ul li a {
+    font-size: 30px;
+    color: white;
+    padding-left: 28px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+nav ul li.active ul li a {
+    color: #e6e6e6;
+    background: #1b1b1b;
+    border-left-color: transparent;
+}
+
+nav ul li.active ul li.active a {
+    color: white;
+    background: #8a52fe;
+    border-left-color: white;
+}
+
+nav ul ul li a:hover {
+    color: white !important;
+    background: #1e1e1e !important;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background-color: #ffde58;
+    font-size: 35px;
+    border-bottom: 1px solid black;
+    width: 100vw;
+    position: fixed;
+}
+
+.contents {
+    margin-left: 300px;
+    padding-top: 80px;
+}
+
+.main-contents {
+    padding: 3%;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<div class="title">
+    <h1>Lemon Squeeze Inventory System</h1>
+</div>
+<nav class="sidebar">
+    <div class="text">Dashboard</div>
+    <ul>
+        <li>
+            <a href="home.php" class="home-btn">Home</a>
+        </li>
+        <li>
+            <a href="#" class="first-btn">Products</a>
+            <ul class="first-show">
+                <li><a href="products-manage.php">-Manage Products</a></li>
+                <li><a href="products-create.php">-Add Products</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="sec-btn">Sales</a>
+            <ul class="sec-show">
+                <li><a href="sales-manage.php">-Manage Sales</a></li>
+                <li><a href="sales-create.php">-Add Sales</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#" class="third-btn">Sales Report</a>
+            <ul class="third-show">
+                <li><a href="sales-report.php">-Sales by Date</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="logout.php" class="home-btn">Logout</a>
+        </li>
+    </ul>
+</nav>
+
+<script>
+$('.first-btn').click(function() {
+    $('nav ul .first-show').toggleClass("show");
+});
+$('.sec-btn').click(function() {
+    $('nav ul .sec-show').toggleClass("show1");
+});
+$('.third-btn').click(function() {
+    $('nav ul .third-show').toggleClass("show2");
+});
+$('nav ul li').click(function() {
+    $(this).addClass("active").siblings().removeClass("active");
+});
+</script>

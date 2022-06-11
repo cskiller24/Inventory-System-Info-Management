@@ -49,20 +49,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products Create | Inventory Management</title>
+    <title>Products Create | Lemon Squeeze Inventory System</title>
 </head>
 
 <body>
     <?php include 'layouts/sidebar.php' ?>
-    <?php include 'layouts/messages.php' ?>
-    <form method="post" enctype="multipart/form-data">
-        <input type="text" name="name" placeholder="Flavor" required>
-        <input type="tel" name="quantity" placeholder="Quantity" required>
-        <input type="tel" name="buying_price" placeholder="Buying Price" required>
-        <input type="tel" name="selling_price" placeholder="Selling Price" required>
-        <input type="file" name="image" placeholder="Image" required>
-        <input type="submit" value="Submit" name="submit">
-    </form>
+    <div class="contents">
+        <div class="main-contents">
+            <form method="post" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Flavor" required>
+                <input type="tel" name="quantity" placeholder="Quantity" required>
+                <input type="tel" name="buying_price" placeholder="Buying Price" required>
+                <input type="tel" name="selling_price" placeholder="Selling Price" required>
+                <input type="file" name="image" placeholder="Image" required>
+                <input type="submit" value="Submit" name="submit">
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
