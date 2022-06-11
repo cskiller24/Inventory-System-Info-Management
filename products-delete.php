@@ -3,7 +3,7 @@
     redirect_if_not_authenticated('login');
     $product = false;
     if(isset($_GET['id'])) {
-        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['id'])[0];
+        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['id'])[0] ?? false;
     }
     if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
         extract($_POST);
@@ -27,6 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/products-delete.css">
     <title>Products Delete | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -36,12 +37,15 @@
         <div class="main-contents">
             <?php if($product): ?>
             <form method="post">
+                <h1>
+                    Confirm Delete <?= $product['name'] ?> ?
+                </h1>
                 <input type="hidden" name="id" value="<?= $product['id'] ?>">
                 <input type="hidden" name="image" value="<?= $product['image'] ?>">
-                <input type="submit" value="Confirm delete? <?= $product['name'] ?>" name="submit">
+                <input type="submit" value="Delete" name="submit">
             </form>
             <?php else: ?>
-            <h1>404 Not Found - Product with id of <?= $_GET['id'] ?> does not exists</h1>
+            <h1>Product with id of <?= $_GET['id'] ?> does not exists</h1>
             <?php endif ?>
         </div>
     </div>

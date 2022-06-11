@@ -24,6 +24,7 @@
     <?php include 'layouts/sidebar.php' ?>
     <div class="contents">
         <div class="main-contents">
+            <?php include_once 'layouts/messages.php' ?>
             <?php if($products): ?>
             <div class="products">
                 <?php foreach($products as $product): ?>

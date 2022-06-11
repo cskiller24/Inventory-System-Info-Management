@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style type="text/css">
 * {
     margin: 0;
@@ -107,7 +110,7 @@ nav ul ul li a:hover {
     align-items: center;
     justify-content: center;
     height: 80px;
-    background-color: #ffde58;
+    background-color: #FFB54B;
     font-size: 35px;
     border-bottom: 1px solid black;
     width: 100vw;
@@ -121,6 +124,10 @@ nav ul ul li a:hover {
 
 .main-contents {
     padding: 3%;
+}
+
+body {
+    background-color: #FFCC76;
 }
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>

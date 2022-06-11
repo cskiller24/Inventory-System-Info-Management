@@ -1,0 +1,122 @@
+.box {
+  padding: 0;
+  width: 100%;
+  height: 75vh;
+  background-color: white;
+}
+
+.box h1 {
+  padding: 20px;
+}
+
+.product-flavor {
+  background-color: #ffbd59;
+  display: flex;
+  padding: 20px;
+  margin: 0px 45px;
+  margin-top: 45px;
+  align-items: center;
+  width: 525px;
+}
+
+.product-flavor .input-group input {
+  font-size: 30px;
+}
+
+.product-flavor .input-group-icon {
+  font-size: 45px;
+}
+
+.forms-below {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 95%;
+  margin: 20px 25px;
+}
+
+.quantity,
+.buying-price,
+.selling-price {
+  background-color: #ffbd59;
+  padding: 10px;
+}
+
+.quantity .input-group input,
+.selling-price .input-group input,
+.buying-price .input-group input {
+  font-size: 18px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button input {
+  background-color: #ff9e5e;
+  width: 20%;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Stackoverflow input-group */
+.input-group {
+  font-size: 40px;
+  display: table;
+  border-collapse: collapse;
+}
+
+.input-group > div {
+  display: table-cell;
+  vertical-align: middle; /* needed for Safari */
+}
+
+.input-group-icon {
+  background-color: #fff;
+  color: #ffde59;
+  padding: 0 12px;
+  margin-right: 10px;
+}
+
+.input-group input {
+  margin-left: 10px;
+  border-radius: 12px;
+  border: 0;
+  display: block;
+  padding: 8px 15px;
+}
+
+.file {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+.file > input[type="file"] {
+  display: none;
+}
+
+.file > label {
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+  outline: 0;
+  user-select: none;
+  border-color: #ffde59;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  background-color: #ffde59;
+  color: black;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}

@@ -13,6 +13,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/products-manage.css">
     <title>Products Manage | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -34,7 +35,7 @@
                 <tbody>
                     <?php foreach ($products as $product): ?>
                     <tr>
-                        <th scope="row"><?= $product['id'] ?></th>
+                        <td scope="row"><?= $product['id'] ?></td>
                         <td><?= $product['name'] ?></td>
                         <td><?= $product['quantity'] ?></td>
                         <td><?= $product['buying_price'] ?></td>
@@ -43,13 +44,13 @@
                         <td>
                             <a href="
                                 products-update.php?<?= http_build_query(['id' => $product['id']]) ?>
-                                ">
-                                Edit
+                                " class="update-link">
+                                <i class="fa-solid fa-pen-to-square fa-2xl"></i>
                             </a>
                             <a href="
                                 products-delete.php?<?= http_build_query(['id' => $product['id']]) ?>
-                                ">
-                                Delete
+                                " class="delete-link">
+                                <i class="fa-solid fa-trash-can fa-2xl"></i>
                             </a>
                         </td>
                     </tr>
