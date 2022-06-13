@@ -21,8 +21,10 @@
 - [x] Product Update
 - [x] Product Delete
 
-- [ ] Sales Create
+- [x] Sales Create
 - [ ] Sales Read
 - [ ] Sales Delete
 
 - [ ] Sales Report
+
+- [ ] Sort inventory in `home.php`
