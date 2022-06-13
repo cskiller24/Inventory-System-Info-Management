@@ -50,7 +50,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" href="css/products-create.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="css/products-create.css" type="text/css" rel="stylesheet">
     <title>Products Create | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -58,80 +59,40 @@
     <?php include 'layouts/sidebar.php' ?>
     <div class="contents">
         <div class="main-contents">
-            <!-- <form method="post" enctype="multipart/form-data">
-                <input type="text" name="name" placeholder="Flavor" required>
-                <input type="tel" name="quantity" placeholder="Quantity" required>
-                <input type="tel" name="buying_price" placeholder="Buying Price" required>
-                <input type="tel" name="selling_price" placeholder="Selling Price" required>
-                <input type="file" name="image" placeholder="Image" required>
-                <input type="submit" value="Submit" name="submit">
-            </form> -->
-            <div class="box">
-                <h1>ADD NEW PRODUCT</h1>
-                <hr>
-                <div class="create-form">
-                    <form method="post" enctype="multipart/form-data">
-                        <div class="product-flavor">
-                            <div class="input-group">
-                                <div class="input-group-icon">
-                                    <i class="fa-solid fa-ellipsis"></i>
-                                </div>
-                                <div class="input-group-area">
-                                    <input type="text" placeholder="Flavor" name="name">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="forms-below">
-                            <div class="quantity">
-                                <div class="input-group">
-                                    <div class="input-group-icon">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                    <div class="input-group-area">
-                                        <input type="tel" placeholder="Quantity" name="quantity" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="buying-price">
-                                <div class="input-group">
-                                    <div class="input-group-icon">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                    <div class="input-group-area">
-                                        <input type="tel" placeholder="Buying Price" name="buying_price" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="selling-price">
-                                <div class="input-group">
-                                    <div class="input-group-icon">
-                                        <i class="fa-solid fa-ellipsis"></i>
-                                    </div>
-                                    <div class="input-group-area">
-                                        <input type="tel" placeholder="Selling Price" name="selling_price" required>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="file">
-                            <label for='input-file'>
-                                Image
-                            </label>
-                            <input id="input-file" type="file" name="image" required />
-                        </div>
-
-                        <div class="submit-button">
-                            <input type="submit" value="Submit" name="submit">
-                        </div>
-                    </form>
+            <div class="dot-logo">
+                <img src="assets/images/dot-logo.png" alt="dot-logo" width="35px">
+                <div class="h1-style">
+                    <h1>ADD NEW PRODUCT</h1>
                 </div>
+            </div>
+            <hr>
+            <div class="addproducts-input">
+                <form method="post" enctype="multipart/form-data">
+                    <div class="input-icons">
+                        <div class="vl"></div>
+                        <i id="first" class="fa fa-circle icon"></i>
+                        <i id="second" class="fa fa-circle icon"></i>
+                        <i id="third" class="fa fa-circle icon"></i>
+                        <input class="flavor" type="text" name="name" placeholder="PRODUCT FLAVOR" required>
+                        <div class="vl2"></div>
+                        <i class="fa fa-shopping-cart icon fa-2x"></i>
+                        <input class="quantity" type="tel" name="quantity" placeholder="QUANTITY" required>
+                        <div class="vl3"></div>
+                        <div class="peso-sign">&#8369;</div>
+                        <input class="buying-price" type="tel" name="buying_price" placeholder="BUYING PRICE" required>
+                        <div class="vl4"></div>
+                        <div class="peso-sign2">&#8369;</div>
+                        <input class="selling-price" type="tel" name="selling_price" placeholder="SELLING PRICE"
+                            required>
+                        <div class="vl5"></div>
+                        <i class="fa fa-file-image-o fa-2x"></i>
+                        <input class="product-image" type="file" name="image" required>
+                        <input class="btn" type="submit" value="ADD PRODUCT" name="submit">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>

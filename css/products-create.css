@@ -1,122 +1,267 @@
-.box {
-  padding: 0;
-  width: 100%;
-  height: 75vh;
-  background-color: white;
-}
+/* CSS File for Products Create Page */
 
-.box h1 {
-  padding: 20px;
-}
+body
+  {
+    background-color: #ffcd74;
+  }
 
-.product-flavor {
-  background-color: #ffbd59;
-  display: flex;
-  padding: 20px;
-  margin: 0px 45px;
-  margin-top: 45px;
-  align-items: center;
-  width: 525px;
-}
+.main-contents
+  {
+    background-color: white;
+    height:320px;
+    width: 620px;
+    margin-top: 50px;
+    margin-left: 40px;
+  }
 
-.product-flavor .input-group input {
-  font-size: 30px;
-}
+.dot-logo
+  {
+    margin-top: -22px;
+    margin-left : -22px;
+    padding-bottom: 8px;
+    position: relative;
+  }
 
-.product-flavor .input-group-icon {
-  font-size: 45px;
-}
+hr
+  {
+    border: 2px solid #feb54a;
+    margin-left: -28px;
+    margin-right: -28px;
+  }
 
-.forms-below {
-  padding: 20px 10px;
-  display: flex;
-  justify-content: space-around;
-  width: 95%;
-  margin: 20px 25px;
-}
+.h1-style
+  {
+    display: inline-block;
+    position: absolute;
+    padding-left: 10px;
+    padding-top: 3px;
+  }
 
-.quantity,
-.buying-price,
-.selling-price {
-  background-color: #ffbd59;
-  padding: 10px;
-}
+.addproducts-input
+  {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 
-.quantity .input-group input,
-.selling-price .input-group input,
-.buying-price .input-group input {
-  font-size: 18px;
-}
+.flavor
+  {
+    width: 100%;
+    height: 48px;
+    margin-top: 30px;
+    border: 8px solid #febd59;
+    font-size: 25px;
+    padding-left: 71px;
+    outline: none;
+  }
 
-.submit-button {
-  display: flex;
-  justify-content: center;
-}
+.flavor::placeholder
+  { 
+    font-family: Times New Roman;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+    padding-left: 14px;
+    position: absolute;
+    padding-top: 5px;
+  }
 
-.submit-button input {
-  background-color: #ff9e5e;
-  width: 20%;
-  padding: 10px 20px;
-  cursor: pointer;
-}
+.input-icons i 
+  {
+        position: absolute;
+    }
+         
+.fa-circle#first
+  {
+        padding-top: 46px;
+        padding-left: 12px;
+        display: inline-block;
+        color: #fede59;
+  }
 
-/* Stackoverflow input-group */
-.input-group {
-  font-size: 40px;
-  display: table;
-  border-collapse: collapse;
-}
+.fa-circle#second
+  {
+        padding-top: 46px;
+        padding-left: 32px;
+        display: inline-block;
+        color: #fede59;
+  }
 
-.input-group > div {
-  display: table-cell;
-  vertical-align: middle; /* needed for Safari */
-}
+.fa-circle#third
+  {
+        padding-top: 46px;
+        padding-left: 52px;
+        display: inline-block;
+        color: #fede59;
+  }
 
-.input-group-icon {
-  background-color: #fff;
-  color: #ffde59;
-  padding: 0 12px;
-  margin-right: 10px;
-}
+.vl
+  {
+    border-left: 3px solid #feb54a;
+    height: 48px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 74px;
+  }
 
-.input-group input {
-  margin-left: 10px;
-  border-radius: 12px;
-  border: 0;
-  display: block;
-  padding: 8px 15px;
-}
+.quantity
+  {
+    width: 30%;
+    height: 48px;
+    margin-top: 30px;
+    border: 8px solid #febd59;
+    font-size: 25px;
+    padding-left: 46px; 
+    outline: none;
+  }
 
-.file {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0px;
-}
+.quantity::placeholder
+  { 
+    font-family: Times New Roman;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+    padding-left: 4px;
+    position: absolute;
+    padding-top: 7px;
+  }
 
-.file > input[type="file"] {
-  display: none;
-}
+.fa-shopping-cart
+  {
+    padding-top: 38px;
+        padding-left: 11px;
+        display: inline-block;
+        color: #4a90fd;
+  }
 
-.file > label {
-  font-size: 1rem;
-  font-weight: 300;
-  cursor: pointer;
-  outline: 0;
-  user-select: none;
-  border-color: #ffde59;
-  border-style: solid;
-  border-radius: 10px;
-  border-width: 1px;
-  background-color: #ffde59;
-  color: black;
-  padding-left: 16px;
-  padding-right: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-}
+.vl2
+  {
+    border-left: 3px solid #feb54a;
+    height: 48px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+
+.buying-price
+  {
+    width: 30%;
+    height: 48px;
+    margin-top: 30px;
+    border: 8px solid #febd59;
+    font-size: 25px;
+    padding-left: 40px;
+    outline: none;
+    margin-left: 4.2%;
+    margin-right: 4.2%;
+  }
+
+.buying-price::placeholder
+  { 
+    font-family: Times New Roman;
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+    padding-left: 7px;
+    position: absolute;
+    padding-top: 9px;
+  }
+
+.peso-sign
+  {
+    padding-top: 34px;
+        padding-left: 38px;
+        display: inline-block;
+        position: absolute;
+        color: #4a90fd;
+        font-size: 35px;
+  }
+
+.vl3
+  {
+    border-left: 3px solid #feb54a;
+    height: 48px;
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 230px;
+  }
+
+.selling-price
+  {
+    width: 30%;
+    height: 48px;
+    margin-top: 30px;
+    border: 8px solid #febd59;
+    font-size: 25px;
+    padding-left: 42px;
+    outline: none;
+  }
+
+.selling-price::placeholder
+  { 
+    font-family: Times New Roman;
+    font-weight: bold;
+    color: black;
+    font-size: 12px;
+    padding-left: 4px;
+    position: absolute;
+    padding-top: 9px;
+  }
+
+.peso-sign2
+  {
+    padding-top: 34px;
+        padding-left: 16px;
+        display: inline-block;
+        position: absolute;
+        color: #4a90fd;
+        font-size: 35px;
+  }
+
+.vl4 
+  {
+    border-left: 3px solid #feb54a;
+    height: 48px;
+    position: absolute;
+    margin-top: -48px;
+    margin-left: 420px;
+  }
+
+.product-image
+  {
+    width: 60%;
+    height: 48px;
+    margin-top: 30px;
+    border: 8px solid #febd59;
+    font-size: 15px;
+    padding-left: 70px;
+    padding-top: 5px;
+    outline: none;
+  }
+
+.fa-file-image-o
+  {
+    padding-top: 38px;
+        padding-left: 14px;
+        display: inline-block;
+        color: #4a90fd;
+  }
+
+.vl5
+  {
+    border-left: 3px solid #feb54a;
+    height: 48px;
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+
+.btn
+  {
+    width: 25%;
+    margin-left: 76px;
+    background-color: #ff9c5c;
+    border: none;
+    font-weight: bold;
+    font-family: Times New Roman;
+    height: 35px;
+  }

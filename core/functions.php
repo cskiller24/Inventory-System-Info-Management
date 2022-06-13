@@ -529,3 +529,20 @@
     {
         return unlink($image_path.$fileName);
     }
+
+    /**
+     * Get the filename of which this function called
+     * if compare is set, it will return boolean
+     *
+     * @param string $compare
+     * @return string|bool
+     */
+    function get_filename(string $compare = ''): bool
+    {
+        if($compare !== '') {
+            $data = explode('/',$_SERVER['PHP_SELF']);
+            $array = end($data) === $compare;
+            return $array;
+        }
+        return false;
+    }

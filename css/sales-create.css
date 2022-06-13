@@ -1,0 +1,60 @@
+.main-contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 90vh;
+}
+
+.product-select {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.product-select form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-select form select {
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.product-select form input {
+  background-color: #ffb54b;
+  font-size: 25px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.sale-add form {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.sale-add form table tbody tr td {
+  border: 1px solid black;
+  padding: 10px 30px;
+}
+
+.sale-add form table {
+  border-collapse: collapse;
+}
+
+.sale-add form table tbody tr td input {
+  padding: 10px 12px;
+  font-size: 20px;
+}
+
+.sale-add input[type="submit"] {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffb54b;
+  cursor: pointer;
+  font-size: 15px;
+}

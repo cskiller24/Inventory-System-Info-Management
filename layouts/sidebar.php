@@ -125,10 +125,6 @@ nav ul ul li a:hover {
 .main-contents {
     padding: 3%;
 }
-
-body {
-    background-color: #FFCC76;
-}
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <div class="title">
@@ -137,27 +133,35 @@ body {
 <nav class="sidebar">
     <div class="text">Dashboard</div>
     <ul>
-        <li>
+        <li class="<?= get_filename('home.php') ? 'active' : '' ?>">
             <a href="home.php" class="home-btn">Home</a>
         </li>
-        <li>
+        <li class="<?= get_filename('products-manage.php') || get_filename('products-create.php') ? 'active' : '' ?>">
             <a href="#" class="first-btn">Products</a>
-            <ul class="first-show">
-                <li><a href="products-manage.php">-Manage Products</a></li>
-                <li><a href="products-create.php">-Add Products</a></li>
+            <ul
+                class="first-show <?= get_filename('products-manage.php') || get_filename('products-create.php') ? 'show' : '' ?>">
+                <li class="<?= get_filename('products-manage.php') ? 'active' : '' ?>"><a
+                        href="products-manage.php">-Manage Products</a></li>
+                <li class="<?= get_filename('products-create.php') ? 'active' : '' ?>"><a
+                        href="products-create.php">-Add Products</a></li>
             </ul>
         </li>
-        <li>
+        <li class="<?= get_filename('sales-manage.php') || get_filename('sales-create.php') ? 'active' : '' ?>">
             <a href="#" class="sec-btn">Sales</a>
-            <ul class="sec-show">
-                <li><a href="sales-manage.php">-Manage Sales</a></li>
-                <li><a href="sales-create.php">-Add Sales</a></li>
+            <ul
+                class="sec-show <?= get_filename('sales-manage.php') || get_filename('sales-create.php') ? 'show1' : '' ?>">
+                <li class="<?= get_filename('sales-manage.php') ? 'active' : '' ?>"><a href="sales-manage.php">-Manage
+                        Sales</a></li>
+                <li class="<?= get_filename('sales-create.php') ? 'active' : '' ?>"><a href="sales-create.php">-Add
+                        Sales</a></li>
             </ul>
         </li>
-        <li>
-            <a href="#" class="third-btn">Sales Report</a>
-            <ul class="third-show">
-                <li><a href="sales-report.php">-Sales by Date</a></li>
+        <li class="<?= get_filename('sales-report.php') ? 'active' : '' ?>">">
+            <a href="#" class="third-btn ">Sales
+                Report</a>
+            <ul class="third-show <?= get_filename('sales-report.php') ? 'show2' : '' ?>">
+                <li class="<?= get_filename('sales-report.php') ? 'active' : '' ?>"><a href="sales-report.php">-Sales by
+                        Date</a></li>
             </ul>
         </li>
         <li>

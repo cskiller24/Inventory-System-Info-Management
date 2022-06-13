@@ -6,7 +6,7 @@
     $date_today = date('Y-m-d');
 
     if(isset($_GET['product_id'])) {
-        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['product_id'])[0    ];
+        $product = sql_find_by_id(PRODUCTS_TABLE, $_GET['product_id'])[0] ?? false;
     }
 
     if(isset($_POST['submit']) && $_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,6 +18,9 @@
         if(! $validate) {
             redirect('home');
         }
+        // Mysql transaction for consistency
+        global $connection;
+        mysqli_autocommit($connection, false);
         extract($_POST);
         $sales = sql_insert(SALES_TABLE, [
             'name' => $name, 
@@ -27,6 +30,13 @@
             'total' => $total,
             'date_added' => $date_added
         ]);
+
+        if($product_quantity - $quantity < 0 ) {
+            add_message_error('Quantity you selected is not enough in stock');
+            redirect('home');
+        }
+        $product_update =1 ;
+
         if(!$sales) {
             add_message_error('Error on adding sales, please try again');
         } else {
@@ -43,6 +53,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/sales-create.css">
     <title>Sales Create | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -53,36 +64,70 @@
         <div class="main-contents">
             <?php if($products): ?>
             <?php if(! isset($_GET['product_id'])): ?>
-            <h1>Select Product you want to add sale</h1>
-            <form action="" method="get">
-                <select name="product_id">
-                    <?php foreach ($products as $product): ?>
-                    <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
-                    <?php endforeach ?>
-                    <input type="submit" value="Add sale">
-                </select>
-            </form>
+            <div class="product-select">
+                <h1>Select Product you want to add sale</h1>
+                <form action="" method="get">
+                    <select name="product_id">
+                        <?php foreach ($products as $product): ?>
+                        <option value="<?= $product['id'] ?>"><?= $product['name'] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <input type="submit" value="Select">
+                </form>
+            </div>
+
             <?php else: ?>
             <?php if ($product): ?>
-            <form method="post">
-                <p>Name: <?= $product['name'] ?></p>
-                <p>In Stock: <?= $product['quantity'] ?></p>
-                <p>Selling Price: <?= $product['selling_price'] ?></p>
-                <p>Total:
-                <p id="total_display">0</p>
-                </p>
-                <input type="number" name="quantity" id="quantity" min="1" max="<?= $product['quantity'] ?>"
-                    onchange="update_total(event)">
-                <input type="hidden" name="price" id="price" value="<?= $product['selling_price'] ?>">
-                <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                <input type="date" name="date_added" value="<?= $date_today ?>">
-                <input type="hidden" name="total" id="total">
-                <input type="hidden" name="name" value="<?= $product['name'] ?>">
-                <input type="submit" name="submit" value="Submit">
-            </form>
+            <div class="sale-add">
+                <form method="post">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Name</td>
+                                <td><?= $product['name'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>In Stock</td>
+                                <td><?= $product['quantity'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>Selling Price</td>
+                                <td><?= $product['selling_price'] ?></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td>
+                                    <p id="total_display">0</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Quantity</td>
+                                <td>
+                                    <input type="number" name="quantity" id="quantity" min="1"
+                                        max="<?= $product['quantity'] ?>" onchange="update_total(event)">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td>
+                                    <input type="date" name="date_added" value="<?= $date_today ?>">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="hidden" name="price" id="price" value="<?= $product['selling_price'] ?>">
+                    <input type="hidden" name="product_quantity" value="<?= $product['quantity'] ?>">
+                    <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                    <input type="hidden" name="total" id="total">
+                    <input type="hidden" name="name" value="<?= $product['name'] ?>">
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </div>
             <?php else: ?>
-            <h1>Product does not exists</h1>
-            <a href="sales-create.php">Reset</a>
+            <div class="_404">
+                <h1>Product does not exists</h1>
+                <a href="sales-create.php">Reset</a>
+            </div>
             <?php endif ?>
             <?php endif ?>
             <?php else: ?>
