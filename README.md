@@ -3,7 +3,7 @@
 ## How to install
 
 1. Clone the Repository
-2. Copy the cloned repository and paste it on **htdocs** on where the `xammp` is installed 
+2. Copy the cloned repository and paste it on **htdocs** folder on where the `xammp` is installed 
 3. Run the `xampp` application
 4. Start **Apache** and **MySql**
 5. On browser enter the link below or click [here](http://localhost/phpmyadmin)
