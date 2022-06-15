@@ -1,8 +1,7 @@
 <?php 
     require 'core/functions.php';
     redirect_if_not_authenticated('login');
-    $sales = sql_select(SALES_TABLE, '*');
-    
+    $sales = sql_select(SALES_TABLE, '*');    
 ?>
 <!DOCTYPE html>
 <html lang="en">

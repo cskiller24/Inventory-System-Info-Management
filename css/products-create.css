@@ -1,5 +1,8 @@
 /* CSS File for Products Create Page */
 
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Roboto&display=swap');
+/* font-family: 'Bebas Neue'; */
+
 body
   {
     background-color: #ffcd74;
@@ -8,10 +11,11 @@ body
 .main-contents
   {
     background-color: white;
-    height:320px;
+    height:340px;
     width: 620px;
     margin-top: 50px;
     margin-left: 40px;
+    border-radius: 20px;
   }
 
 .dot-logo
@@ -35,6 +39,8 @@ hr
     position: absolute;
     padding-left: 10px;
     padding-top: 3px;
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.1rem;
   }
 
 .addproducts-input
@@ -258,7 +264,7 @@ hr
 .btn
   {
     width: 25%;
-    margin-left: 76px;
+    margin-left: 70px;
     background-color: #ff9c5c;
     border: none;
     font-weight: bold;

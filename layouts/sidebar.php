@@ -2,6 +2,8 @@
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Roboto&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -10,27 +12,15 @@
 
 .sidebar {
     position: fixed;
-    width: 300px;
+    width: 250px;
     height: 100%;
     left: 0;
-    background: #1b1b1b;
-    margin-top: 80px;
-}
-
-.sidebar .text {
-    color: white;
-    font-size: 60px;
-    text-align: left;
-    background: #8a52fe;
-    height: 80px;
-    padding-top: 10px;
-    padding-left: 18px;
-    margin-bottom: 12px;
-
+    background: #fff;
+    margin-top: 100px;
 }
 
 nav ul {
-    background: #1b1b1b;
+    background: #fff;
     height: 100%;
     width: 100%;
     list-style: none;
@@ -38,9 +28,9 @@ nav ul {
 
 nav ul li a {
     position: relative;
-    color: white;
+    color: red;
     text-decoration: none;
-    font-size: 50px;
+    font-size: 35px;
     padding-left: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -50,13 +40,14 @@ nav ul li a {
 }
 
 nav ul li.active a {
-    color: #8a52fe;
-    background: black;
+    color: #fff;
+    background: linear-gradient(yellow, red);
     border-left-color: #8a52fe;
 }
 
 nav ul li a:hover {
-    background: #1e1e1e;
+    background: linear-gradient(yellow, red);
+    color: #fff;
 }
 
 nav ul ul {
@@ -82,39 +73,46 @@ nav ul ul li {
 
 nav ul ul li a {
     font-size: 30px;
-    color: white;
+    color: red;
+    background: white;
     padding-left: 28px;
     padding-top: 8px;
     padding-bottom: 8px;
 }
 
 nav ul li.active ul li a {
-    color: #e6e6e6;
-    background: #1b1b1b;
+    color: red;
+    background: white;
     border-left-color: transparent;
 }
 
 nav ul li.active ul li.active a {
-    color: white;
-    background: #8a52fe;
+    color: #fff;
+    background: linear-gradient(yellow, red);
     border-left-color: white;
 }
 
 nav ul ul li a:hover {
-    color: white !important;
-    background: #1e1e1e !important;
+    color: #fff !important;
+    background: linear-gradient(yellow, red) !important;
 }
 
 .title {
+    z-index: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 80px;
+    justify-content: space-between;
+    padding-left: 20px;
+    height: 100px;
     background-color: #FFB54B;
     font-size: 35px;
     border-bottom: 1px solid black;
     width: 100vw;
     position: fixed;
+    font-family: 'Bebas Neue';
+    letter-spacing: 1rem;
+    background-image: linear-gradient(yellow, red);
+    color: #fff;
 }
 
 .contents {
@@ -128,10 +126,11 @@ nav ul ul li a:hover {
 </style>
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 <div class="title">
-    <h1>Lemon Squeeze Inventory System</h1>
+    <div class="main">
+        <h1>Lemon Squeeze</h1>
+    </div>
 </div>
 <nav class="sidebar">
-    <div class="text">Dashboard</div>
     <ul>
         <li class="<?= get_filename('home.php') ? 'active' : '' ?>">
             <a href="home.php" class="home-btn">Home</a>
@@ -156,7 +155,7 @@ nav ul ul li a:hover {
                         Sales</a></li>
             </ul>
         </li>
-        <li class="<?= get_filename('sales-report.php') ? 'active' : '' ?>">">
+        <li class="<?= get_filename('sales-report.php') ? 'active' : '' ?>">
             <a href="#" class="third-btn ">Sales
                 Report</a>
             <ul class="third-show <?= get_filename('sales-report.php') ? 'show2' : '' ?>">

@@ -99,7 +99,7 @@
                 </tr>
                 <tr>
                     <td class="login-link">
-                        Already registered?<a href="login.php">Click Here</a>
+                        Already registered?<a href="login.php"> Click Here</a>
                     </td>
                     <td class="button-login">
                         <button type="submit" name="submit">Sign Up</button>

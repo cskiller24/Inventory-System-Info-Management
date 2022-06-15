@@ -1,18 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Roboto&display=swap');
+
 .products {
   display: flex;
   flex-wrap: wrap;
 }
 
 .card {
-  margin: 10px 20px;
+  margin: 10px 50px;
 }
 
 .card .product-text {
+  font-family: 'Bebas Neue';
+  letter-spacing: 0.1rem;
   padding: 5px;
+  z-index: 1;
 }
 
 .card .product-text .name,
 .card .product-text .price {
+  z-index: 1;
   font-size: 20px;
   font-weight: 600;
 }
@@ -21,5 +27,11 @@
   border: 3px solid green;
   border-radius: 30px;
   max-width: 100%;
+  z-index: -1;
   height: 300px;
 }
+
+.card .image img:hover {
+  z-index: -1;
+  transform: scale(1.1) ;
+} 

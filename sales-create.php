@@ -35,7 +35,11 @@
             add_message_error('Quantity you selected is not enough in stock');
             redirect('home');
         }
-        $product_update =1 ;
+        $product_update = sql_update(PRODUCTS_TABLE, [
+            'quantity' => $product_quantity - $quantity 
+        ], ['id' => $product_id]);
+
+        mysqli_commit($connection);
 
         if(!$sales) {
             add_message_error('Error on adding sales, please try again');

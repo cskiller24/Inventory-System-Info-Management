@@ -1,10 +1,18 @@
 /* CSS File for Login Page */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&family=Roboto&display=swap');
+/* font-family: 'Bebas Neue'; */
+
 
 body
 	{
+		background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url("../assets/images/bg.jpg");
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
 		margin: 0;
 		padding: 0;
-		background-color: #ffde58;
 		overflow-x:hidden;
 	}
 
@@ -13,7 +21,7 @@ body
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: #ffbd58;
+		background-image: linear-gradient(yellow, red);
 		height: 200px;
 	}
 
@@ -23,7 +31,7 @@ body
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-	}
+}
 
 .banner-container .banner .logo1
 	{
@@ -36,7 +44,8 @@ body
 .banner-container .banner .text
 	{
 		flex: 1 1 250px;
-		font-family: Garamond;
+		font-family: 'Bebas Neue';
+		letter-spacing: 1rem;
 		font-weight: bold;
 		font-size: 80px;
 		color: white;
@@ -56,56 +65,66 @@ body
 
 .box 
 	{
-		background-color: white;
-		height:470px;
+		background-color: rgba(255, 255, 255, 0.9);
+		height: 440px;
 		width: 600px;
-		margin-top: -3%;
-		margin-left: 23%;
+		margin-left: 3%;
 		margin-right: 25%;
 		padding-left: 3%;
 		padding-right: 3%;
+		border-radius: 20px;
 	}
 
 h3
 	{
 
-		font-family: Times New Roman;
+		font-family: 'Bebas Neue';
+		letter-spacing: 0.5rem;
 		font-size: 70px;
 		text-align: center;
+		color: #FF5349;
 		margin-bottom: 9px;
 	}
 
 .user
 	{
-		font-family: Times New Roman;
-		font-size: 40px;
+		font-family: 'Bebas Neue';
+		letter-spacing: 0.5rem;
+		font-size: 30px;
 		text-align: left;
+		color: #FF5349;
 	}
 
 .user-pass
 	{
-		font-family: Times New Roman;
-		font-size: 40px;
+		font-family: 'Bebas Neue';
+		letter-spacing: 0.5rem;
+		font-size: 30px;
 		text-align: left;
+		color: #FF5349;
 	}
 
 ::placeholder
 	{
-		font-family: Times New Roman;
-		font-size: 40px;
+		font-family: 'Bebas Neue';
+		letter-spacing: 0.5rem;
+		font-size: 30px;
 		position: absolute;
-		padding-left: 20px;
+		color: #FF5349;
 	}
-
+	
 input
 	{
-		background-color: #facb07;
+		background-color: #FF5349;
 		border: none;
 		width: 400px;
 		height: 50px;
 		outline: none;
-		font-size: 35px;
+		font-size: 30px;
+		padding-left: 10px;
+		color: #fff;
 	}
+
 
 button
 	{	
@@ -121,7 +140,11 @@ button
 		padding-left: 20px;
 		padding-right: 20px;
 		margin-top: 50px;
+		cursor: pointer;
 	}
+button:hover {
+	background-color: #FF5349;
+}
 
 .register-link
 	{

@@ -54,25 +54,25 @@
         <form action="login.php" method="post">
             <h3>LOGIN</h3>
             <table>
-                <tr>
+                <tr class="center">
                     <td class="user">Username</td>
                 </tr>
-                <tr>
+                <tr class="center">
                     <td>
                         <input type="text" name="username" placeholder="Username">
                     </td>
                 </tr>
-                <tr>
+                <tr class="center">
                     <td class="user-pass">Password</td>
                 </tr>
-                <tr>
+                <tr class="center">
                     <td>
                         <input type="password" name="password" placeholder="********">
                     </td>
                 </tr>
                 <tr>
                     <td class="register-link">
-                        Not Registered?<a href="register.php">Click Here</a>
+                        Not Registered?<a href="register.php"> Click Here</a>
                     </td>
                     <td class="button-login">
                         <button type="submit" name="submit">LOGIN</button>
