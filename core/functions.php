@@ -354,7 +354,7 @@
 
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
-        if(sql_exists(USERS_TABLE, 'email', $data['username'])) {
+        if(sql_exists(USERS_TABLE, 'username', $data['username'])) {
             return [
                 'status' => false,
                 'message' => 'Username exists in the database'
