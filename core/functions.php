@@ -441,8 +441,8 @@
         $buying_total = 0;
         $selling_total = 0;
         foreach($products as $product) {
-            $buying_total += $product['buying_price'];
-            $selling_total += $product['selling_price'];
+            $buying_total += $product['total_buying_price'];
+            $selling_total += $product['total_selling_price'];
         }
         $products['grand_total'] = $selling_total;
         $products['profit'] = $selling_total - $buying_total;

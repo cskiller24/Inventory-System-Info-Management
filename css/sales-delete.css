@@ -1,0 +1,24 @@
+.main-contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 85vh;
+  }
+  
+  form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  input {
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px;
+    background-color: tomato;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  

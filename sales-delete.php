@@ -29,6 +29,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/sales-delete.css">
     <title>Sales Delete | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -38,8 +39,9 @@
         <div class="main-contents">
             <?php if($sale): ?>
             <form method="post">
+                <h1>Confirm delete <?= $sale['name'] ?> sale ?</h1>
                 <input type="hidden" name="id" value="<?= $sale['id'] ?>">
-                <input type="submit" value="Confirm delete? <?= $sale['name'] ?>" name="submit">
+                <input type="submit" value="Delete" name="submit">
             </form>
             <?php else: ?>
             <h1>Sale with id of <?= $_GET['id'] ?> does not exists</h1>

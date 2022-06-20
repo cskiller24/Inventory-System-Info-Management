@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="css/sales-manage.css">
     <title>Sales Manage | Lemon Squeeze Inventory System</title>
 </head>
 
@@ -19,6 +20,10 @@
     <?php include 'layouts/messages.php' ?>
     <div class="contents">
         <div class="main-contents">
+            <div class="heading">
+                <img src="assets/images/dot-logo.png" alt="DOT" srcset="">
+                <h1>All Sales</h1>
+            </div>
             <?php if($sales): ?>
             <table class="table">
                 <thead>
@@ -34,7 +39,7 @@
                 <tbody>
                     <?php foreach ($sales as $sale): ?>
                     <tr>
-                        <th scope="row"><?= $sale['product_id'] ?? 'Deleted' ?></th>
+                        <td scope="row"><?= $sale['product_id'] ?? 'Deleted' ?></td>
                         <td><?= $sale['name'] ?></td>
                         <td><?= $sale['quantity'] ?></td>
                         <td><?= $sale['total'] ?></td>
@@ -43,7 +48,7 @@
                             <a href="
                                 <?= 'sales-delete.php?'.http_build_query(['id' => $sale['id']]) ?>
                                 ">
-                                Delete
+                                <i class="fa-solid fa-trash-can fa-2x"></i>
                             </a>
                         </td>
                     </tr>

@@ -1,0 +1,60 @@
+.input-form {
+    height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form table, .input-form th, .input-form td {
+    border: 3px solid black;
+    padding: 30px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.input-form table {
+    width: 500px;
+}
+
+.input-form th {
+    font-size: 30px;
+}
+
+.input-form td input[type=date] {
+    font-size: 25px;
+    padding: 10px 30px;
+}
+
+.input-form td input[type=submit] {
+    width: 50%;
+    padding: 10px;
+    background-color: tomato;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.sales-form table, 
+.sales-form th,
+.sales-form td {
+    border-collapse: collapse;
+    border: 2px solid black;
+    text-align: center;
+}
+
+.sales-form table {
+    margin-top: 20px;
+    width: 90%;
+}
+
+.sales-form th,
+.sales-form td {
+    font-size: 20px;
+    padding: 15px 20px;
+}
+
+
+h1 {
+    text-align: center;
+}
